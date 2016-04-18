@@ -50,8 +50,7 @@
   </test>
 
   <!-- check recognition by CH -->
-  <test test-name="stdout_3"
-        pkg="jsk_tools" type="test_stdout.py"
+  <test test-name=""   pkg="jsk_tools" type="test_topic_published.py"
         time-limit="360">
     <param name="~command" value="rostopic echo /right_hand/color_object_matcher/output -n1" />
     <param name="~stdout_line0" type="str" value="header: " />  <!-- check if message is comming -->

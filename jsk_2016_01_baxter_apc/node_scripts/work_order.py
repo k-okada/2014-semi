@@ -40,6 +40,7 @@ def get_sorted_work_order(json_file):
 
 
 def get_work_order_msg(json_file):
+    print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",json_file)
     work_order = get_sorted_work_order(json_file=json_file)
     msg = dict(left=WorkOrderArray(), right=WorkOrderArray())
     abandon_objects = [
@@ -53,9 +54,13 @@ def get_work_order_msg(json_file):
         'rolodex_jumbo_pencil_cup',
         'oreo_mega_stuf'
     ]
+    abandon_target_objects = [
+        'rolodex_jumbo_pencil_cup',
+        'oreo_mega_stuf'
+    ]
     for bin_, target_object in work_order:
         if target_object in abandon_objects:
-    bin_contents = dict(get_bin_contents(json_file=json_file))
+            bin_contents = dict(get_bin_contents(json_file=json_file))
     for bin_, target_object in work_order:
         if target_object in abandon_target_objects:
             continue
