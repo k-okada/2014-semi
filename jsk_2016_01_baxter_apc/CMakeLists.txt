@@ -4,7 +4,7 @@ project(jsk_2016_01_baxter_apc)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roseus)
+find_package(catkin REQUIRED COMPONENTS roseus rostest)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -191,6 +191,6 @@ add_custom_target(compile_stow_kiva_world ALL
 # endif()
 
 ## Add folders to be run by python nosetests
-# if(CATKIN_ENABLE_TESTING)
-#   catkin_add_nosetests(src/jsk_apc2016_common/tests)
-# endif()
+if(CATKIN_ENABLE_TESTING)
+ add_rostest(test/work_order.test)
+endif()
